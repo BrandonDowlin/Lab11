@@ -1,4 +1,4 @@
-name := """Lab8"""
+name := """Crud Labs"""
 organization := "com.example"
 
 version := "1.0-SNAPSHOT"

@@ -64,7 +64,7 @@ Seq[Any](format.raw/*1.32*/("""
 
 <ul class="nav navbar-nav">
 
-<li class="active"><a href="/">Products</a></li>
+<li><a href="/">Products</a></li>
 
 <li><a href="/customers">Customers</a></li>
 
@@ -122,10 +122,10 @@ Copyright <strong>Online Shop</strong>
 
               /*
                   -- GENERATED --
-                  DATE: Fri Dec 08 18:20:14 GMT 2017
+                  DATE: Fri Dec 08 18:51:51 GMT 2017
                   SOURCE: /home/wdd/webapps/Lab8/app/views/main.scala.html
-                  HASH: e6df3eb4baa420523838c3abb51eac0e40f0d7e5
-                  MATRIX: 952->1|1077->31|1105->33|1221->122|1247->127|1523->376|1538->382|1600->423|2081->878|2108->885|2136->886
+                  HASH: d50289f1389fec98339efa411861206ba7b7af8b
+                  MATRIX: 952->1|1077->31|1105->33|1221->122|1247->127|1523->376|1538->382|1600->423|2066->863|2093->870|2121->871
                   LINES: 28->1|33->1|35->3|43->11|43->11|49->17|49->17|49->17|85->53|85->53|86->54
                   -- GENERATED --
               */

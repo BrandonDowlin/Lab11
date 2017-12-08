@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/Lab8/conf/routes
-// @DATE:Fri Dec 08 18:20:15 GMT 2017
+// @DATE:Fri Dec 08 18:46:51 GMT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,6 +19,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:8
+    def addProduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addProduct",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addproduct"})
+        }
+      """
+    )
   
     // @LINE:7
     def customer: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -42,7 +52,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:10
+  // @LINE:13
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -50,7 +60,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:10
+    // @LINE:13
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

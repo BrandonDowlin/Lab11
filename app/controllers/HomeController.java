@@ -33,5 +33,15 @@ public class HomeController extends Controller {
         List<Customer> customerList = Customer.findAll();
         return ok(customer.render(customerList));
     }
+    public Result addProduct(){
+        Form<Product> productForm = formFactory.form(Product.class);
+        return ok(addProduct.render(productForm));
+    }
 
+    private FormFactory formFactory;
+
+    @Inject
+    public HomeController(FormFactory f){
+        this.formFactory = f;
+    }
 }

@@ -38,7 +38,7 @@
   <td>@p.getDesc</td>
   
   <td>@p.getStock</td>
-  
+
   <td class="numeric">&euro; @("%.2f".format(p.getPrice))</td>
   </tr>
 }
@@ -46,5 +46,12 @@
   </tbody>
   
   </table>
+
+  <p>
+    <a href="@routes.HomeController.addProduct()">
+        <button class="btn btn-primary">Add a product</button>
+    </a>
+
+  </p>
   
   } 
