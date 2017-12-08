@@ -1,5 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/Lab8/app/models/Product.java:5:1: package io.ebean does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport io.ebean.*;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/Lab8/app/models/Product.java:10:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Model[0m
-[0m[[0m[31merror[0m] [0m[0mpublic class Product extends Model {[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/Lab8/app/models/Customer.java:32:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable Address[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class models.Customer[0m
+[0m[[0m[31merror[0m] [0m[0m            this.address = Address;[0m

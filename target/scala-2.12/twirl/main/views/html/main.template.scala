@@ -43,7 +43,7 @@ Seq[Any](format.raw/*1.32*/("""
 <title>Online Shop - """),_display_(/*11.23*/title),format.raw/*11.28*/("""</title>
 
 <!-- Bootstrap Core CSS -->
-
+<link rel="stylesheet" type="text/css" href="../public/stylesheets/main.css">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet" />
 
 <!-- Custom CSS --> <link href=""""),_display_(/*17.34*/routes/*17.40*/.Assets.versioned("stylesheets/main.css")),format.raw/*17.81*/("""" rel="stylesheet" />
@@ -64,9 +64,9 @@ Seq[Any](format.raw/*1.32*/("""
 
 <ul class="nav navbar-nav">
 
-<li class="active"><a href="#">About</a></li>
+<li class="active"><a href="/">Products</a></li>
 
-<li><a href="#">Services</a></li>
+<li><a href="/customers">Customers</a></li>
 
 <li><a href="#">Contact</a></li>
 
@@ -81,10 +81,10 @@ Seq[Any](format.raw/*1.32*/("""
 <div class="row">
 
 <div class="col-md-12">
-
+<div class="content">
 """),_display_(/*53.2*/content),format.raw/*53.9*/("""
-
-"""),format.raw/*55.1*/("""</div>
+"""),format.raw/*54.1*/("""</div>
+</div>
 
 </div>
 
@@ -122,11 +122,11 @@ Copyright <strong>Online Shop</strong>
 
               /*
                   -- GENERATED --
-                  DATE: Fri Dec 08 13:01:17 GMT 2017
+                  DATE: Fri Dec 08 18:20:14 GMT 2017
                   SOURCE: /home/wdd/webapps/Lab8/app/views/main.scala.html
-                  HASH: 117a94b6993e93132de416e89d0341677cfaa909
-                  MATRIX: 952->1|1077->31|1105->33|1221->122|1247->127|1446->299|1461->305|1523->346|1970->767|1997->774|2026->776
-                  LINES: 28->1|33->1|35->3|43->11|43->11|49->17|49->17|49->17|85->53|85->53|87->55
+                  HASH: e6df3eb4baa420523838c3abb51eac0e40f0d7e5
+                  MATRIX: 952->1|1077->31|1105->33|1221->122|1247->127|1523->376|1538->382|1600->423|2081->878|2108->885|2136->886
+                  LINES: 28->1|33->1|35->3|43->11|43->11|49->17|49->17|49->17|85->53|85->53|86->54
                   -- GENERATED --
               */
           
