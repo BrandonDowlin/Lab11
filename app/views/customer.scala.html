@@ -47,7 +47,11 @@
   <td>@p.getNumber</td>
   
   <td>@p.getDob</td>
-
+  <td>
+    <a href="@routes.HomeController.updateCustomer(p.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
+      <span class="glyphicon glyphicon-pencil"></span>
+    </a>
+  </td>
   <td>
     <a href="@routes.HomeController.deleteCustomer(p.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
       <span class="glyphicon glyphicon-trash"></span>

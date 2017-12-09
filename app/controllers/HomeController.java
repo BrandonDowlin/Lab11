@@ -58,7 +58,11 @@ public class HomeController extends Controller {
             return badRequest(addProduct.render(newProductForm));
         } else {
             Product newProduct = newProductForm.get();
-            newProduct.save();
+            if (newProduct.getId() == null){
+                newProduct.save();
+            } else if (newProduct.getId() != null) {
+                newProduct.update();
+            }
             flash("success", "Product "+ newProduct.getName() + " was added");
             return redirect(controllers.routes.HomeController.index());
         }
@@ -72,7 +76,11 @@ public class HomeController extends Controller {
                     return badRequest(addCustomer.render(newCustomerForm));
                 } else {
                     Customer newCustomer = newCustomerForm.get();
-                    newCustomer.save();
+                    if (newCustomer.getId() == null){
+                        newCustomer.save();
+                    } else if (newCustomer.getId() != null) {
+                        newCustomer.update();
+                    }
                     flash("success", "Customer "+ newCustomer.getName() + " was added");
                     return redirect(controllers.routes.HomeController.customer());
                 }
@@ -88,5 +96,33 @@ public class HomeController extends Controller {
                 Customer.find.ref(id).delete();
                 flash("success", "Customer has been deleted");
                 return redirect(routes.HomeController.customer());
+            }
+
+            @Transactional
+            public Result updateProduct(Long id){
+                Product p;
+                Form<Product> productForm;
+
+                try {
+                    p = Product.find.byId(id);
+                    productForm = formFactory.form(Product.class).fill(p);
+                } catch (Exception ex) {
+                    return badRequest("error");
+                }
+                return ok(addProduct.render(productForm));
+            }
+
+            @Transactional
+            public Result updateCustomer(Long id){
+                Product p;
+                Form<Customer> productForm;
+
+                try {
+                    p = Customer.find.byId(id);
+                    productForm = formFactory.form(Customer.class).fill(p);
+                } catch (Exception ex) {
+                    return badRequest("error");
+                }
+                return ok(addCustomer.render(customerForm));
             }
 }
