@@ -35,7 +35,14 @@ Seq[Any](format.raw/*1.36*/("""
   
   """),format.raw/*4.3*/("""<p class="lead">Customer Info</p>
   
-  <table class="table table-bordered table-hover table-condensed">
+
+  """),_display_(/*7.4*/if(flash.containsKey("success"))/*7.36*/{_display_(Seq[Any](format.raw/*7.37*/("""
+    """),format.raw/*8.5*/("""<div class="alert alert-success">
+      """),_display_(/*9.8*/flash/*9.13*/.get("success")),format.raw/*9.28*/("""
+    """),format.raw/*10.5*/("""</div>
+""")))}),format.raw/*11.2*/("""
+
+  """),format.raw/*13.3*/("""<table class="table table-bordered table-hover table-condensed">
   
   <thead>
   
@@ -60,26 +67,38 @@ Seq[Any](format.raw/*1.36*/("""
   <tbody>
   
   <!-- Product row(s) -->
-  """),_display_(/*31.4*/for(p<-customers) yield /*31.21*/ {_display_(Seq[Any](format.raw/*31.23*/("""
-  """),format.raw/*32.3*/("""<tr>
+  """),_display_(/*38.4*/for(p<-customers) yield /*38.21*/ {_display_(Seq[Any](format.raw/*38.23*/("""
+  """),format.raw/*39.3*/("""<tr>
   
-  <td>"""),_display_(/*34.8*/p/*34.9*/.getID),format.raw/*34.15*/("""</td>
+  <td>"""),_display_(/*41.8*/p/*41.9*/.getId),format.raw/*41.15*/("""</td>
   
-  <td>"""),_display_(/*36.8*/p/*36.9*/.getName),format.raw/*36.17*/("""</td>
+  <td>"""),_display_(/*43.8*/p/*43.9*/.getName),format.raw/*43.17*/("""</td>
   
-  <td>"""),_display_(/*38.8*/p/*38.9*/.getAddress),format.raw/*38.20*/("""</td>
+  <td>"""),_display_(/*45.8*/p/*45.9*/.getAddress),format.raw/*45.20*/("""</td>
   
-  <td>"""),_display_(/*40.8*/p/*40.9*/.getNumber),format.raw/*40.19*/("""</td>
+  <td>"""),_display_(/*47.8*/p/*47.9*/.getNumber),format.raw/*47.19*/("""</td>
   
-  <td>"""),_display_(/*42.8*/p/*42.9*/.getDOB),format.raw/*42.16*/("""</td>
+  <td>"""),_display_(/*49.8*/p/*49.9*/.getDob),format.raw/*49.16*/("""</td>
+
+  <td>
+    <a href=""""),_display_(/*52.15*/routes/*52.21*/.HomeController.deleteCustomer(p.getId)),format.raw/*52.60*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
+      <span class="glyphicon glyphicon-trash"></span>
+    </a>
+  </td>
   </tr>
-""")))}),format.raw/*44.2*/("""
+""")))}),format.raw/*57.2*/("""
   
-  """),format.raw/*46.3*/("""</tbody>
+  """),format.raw/*59.3*/("""</tbody>
   
   </table>
   
-  """)))}),format.raw/*50.4*/(""" """))
+  <p>
+    <a href=""""),_display_(/*64.15*/routes/*64.21*/.HomeController.addCustomer()),format.raw/*64.50*/("""">
+        <button class="btn btn-primary">Add a customer</button>
+    </a>
+
+  </p>
+  """)))}),format.raw/*69.4*/(""" """))
       }
     }
   }
@@ -95,11 +114,11 @@ Seq[Any](format.raw/*1.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Dec 08 18:20:14 GMT 2017
-                  SOURCE: /home/wdd/webapps/Lab8/app/views/customer.scala.html
-                  HASH: ca0b5bb023b5ca5bcb747704572878ec7337c0b3
-                  MATRIX: 966->1|1095->35|1122->37|1151->58|1190->60|1222->66|1570->388|1603->405|1643->407|1673->410|1714->425|1723->426|1750->432|1792->448|1801->449|1830->457|1872->473|1881->474|1913->485|1955->501|1964->502|1995->512|2037->528|2046->529|2074->536|2119->551|2152->557|2211->586
-                  LINES: 28->1|33->1|34->2|34->2|34->2|36->4|63->31|63->31|63->31|64->32|66->34|66->34|66->34|68->36|68->36|68->36|70->38|70->38|70->38|72->40|72->40|72->40|74->42|74->42|74->42|76->44|78->46|82->50
+                  DATE: Sat Dec 09 19:54:14 GMT 2017
+                  SOURCE: C:/Users/brand/Documents/WebLab/Lab8/CRUD-Labs/app/views/customer.scala.html
+                  HASH: 9654f8068200fe1aa6ace7500a608d1dcd1147e6
+                  MATRIX: 966->1|1095->35|1123->38|1152->59|1191->61|1225->69|1294->113|1334->145|1372->146|1404->152|1471->194|1484->199|1519->214|1552->220|1591->229|1624->235|1958->543|1991->560|2031->562|2062->566|2105->583|2114->584|2141->590|2185->608|2194->609|2223->617|2267->635|2276->636|2308->647|2352->665|2361->666|2392->676|2436->694|2445->695|2473->702|2531->733|2546->739|2606->778|2784->926|2819->934|2897->985|2912->991|2962->1020|3084->1112
+                  LINES: 28->1|33->1|34->2|34->2|34->2|36->4|39->7|39->7|39->7|40->8|41->9|41->9|41->9|42->10|43->11|45->13|70->38|70->38|70->38|71->39|73->41|73->41|73->41|75->43|75->43|75->43|77->45|77->45|77->45|79->47|79->47|79->47|81->49|81->49|81->49|84->52|84->52|84->52|89->57|91->59|96->64|96->64|96->64|101->69
                   -- GENERATED --
               */
           

@@ -76,17 +76,7 @@ this.name = name;
 
 }
 
-public String getDesc() {
-    
-    return description;
-    
-    }
-    
-    public void setDesc(String description) {
-    
-    this.description = description;
-    
-    }
+
 
     public int getStock() {
         
@@ -111,5 +101,17 @@ public String getDesc() {
             this.price = price;
             
             }
+
+            public String getDescription() {
+                
+                return description;
+                
+                }
+                
+                public void setDescription(String description) {
+                
+                this.description = description;
+                
+                }
 
 } 

@@ -2,6 +2,14 @@
 @main("Products Page") {
   
   <p class="lead">Product Catalogue</p>
+
+
+  @if(flash.containsKey("success")){
+      <div class="alert alert-success">
+        @flash.get("success")
+      </div>
+  }
+
   
   <table class="table table-bordered table-hover table-condensed">
   
@@ -35,11 +43,17 @@
   
   <td>@p.getName</td>
   
-  <td>@p.getDesc</td>
+  <td>@p.getDescription</td>
   
   <td>@p.getStock</td>
 
   <td class="numeric">&euro; @("%.2f".format(p.getPrice))</td>
+
+  <td>
+    <a href="@routes.HomeController.deleteProduct(p.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
+      <span class="glyphicon glyphicon-trash"></span>
+    </a>
+  </td>
   </tr>
 }
   

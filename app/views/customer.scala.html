@@ -3,6 +3,13 @@
   
   <p class="lead">Customer Info</p>
   
+
+  @if(flash.containsKey("success")){
+    <div class="alert alert-success">
+      @flash.get("success")
+    </div>
+}
+
   <table class="table table-bordered table-hover table-condensed">
   
   <thead>
@@ -31,7 +38,7 @@
   @for(p<-customers) {
   <tr>
   
-  <td>@p.getID</td>
+  <td>@p.getId</td>
   
   <td>@p.getName</td>
   
@@ -39,7 +46,13 @@
   
   <td>@p.getNumber</td>
   
-  <td>@p.getDOB</td>
+  <td>@p.getDob</td>
+
+  <td>
+    <a href="@routes.HomeController.deleteCustomer(p.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
+      <span class="glyphicon glyphicon-trash"></span>
+    </a>
+  </td>
   </tr>
 }
   
@@ -47,4 +60,10 @@
   
   </table>
   
+  <p>
+    <a href="@routes.HomeController.addCustomer()">
+        <button class="btn btn-primary">Add a customer</button>
+    </a>
+
+  </p>
   } 

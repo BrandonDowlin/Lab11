@@ -45,10 +45,10 @@ public class Customer extends Model {
             }
 
 
-    public void setID(Long id){
+    public void setId(Long id){
         this.id = id;
             }
-            public Long getID(){
+            public Long getId(){
                 return this.id;
             }
 
@@ -73,10 +73,14 @@ public class Customer extends Model {
                 return this.number;
             }
     
-    public void setDOB(String dob){
+    public void setDob(String dob){
         this.dob = dob;
             }
-            public String getDOB(){
+            public String getDob(){
                 return this.dob;
             }
-        }
+
+            
+                
+                }
+    
