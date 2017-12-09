@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/brand/Documents/WebLab/Lab8/CRUD-Labs/conf/routes
-// @DATE:Sat Dec 09 19:42:16 GMT 2017
+// @DATE:Sat Dec 09 20:43:37 GMT 2017
 
 
 package router {

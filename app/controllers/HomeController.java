@@ -114,12 +114,12 @@ public class HomeController extends Controller {
 
             @Transactional
             public Result updateCustomer(Long id){
-                Product p;
-                Form<Customer> productForm;
+                Customer p;
+                Form<Customer> customerForm;
 
                 try {
                     p = Customer.find.byId(id);
-                    productForm = formFactory.form(Customer.class).fill(p);
+                    customerForm = formFactory.form(Customer.class).fill(p);
                 } catch (Exception ex) {
                     return badRequest("error");
                 }
