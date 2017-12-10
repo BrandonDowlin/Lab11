@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/brand/Documents/WebLab/Lab8/CRUD-Labs/conf/routes
-// @DATE:Sat Dec 09 20:43:37 GMT 2017
+// @DATE:Sun Dec 10 01:25:13 GMT 2017
 
 import play.api.mvc.Call
 
@@ -55,6 +55,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "deleteCustomer/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
+    // @LINE:6
+    def index(cat:Long = 0L): Call = {
+      
+      Call("GET", _prefix + play.core.routing.queryString(List(if(cat == 0L) None else Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("cat", cat)))))
+    }
+  
     // @LINE:15
     def updateCustomer(id:Long): Call = {
       
@@ -65,12 +71,6 @@ package controllers {
     def addProduct(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "addproduct")
-    }
-  
-    // @LINE:6
-    def index(): Call = {
-      
-      Call("GET", _prefix)
     }
   
     // @LINE:7

@@ -43,20 +43,27 @@ Seq[Any](format.raw/*1.37*/("""
 
     """),_display_(/*12.6*/inputText(productForm("name"), '_label -> "Name", 'class -> "form-control")),format.raw/*12.81*/("""
     """),_display_(/*13.6*/inputText(productForm("description"), '_label -> "Description", 'class -> "form-control")),format.raw/*13.95*/("""
-    """),_display_(/*14.6*/inputText(productForm("stock"), '_label -> "Stock", 'class -> "form-control")),format.raw/*14.83*/("""
-    """),_display_(/*15.6*/inputText(productForm("price"), '_label -> "Price", 'class -> "form-control")),format.raw/*15.83*/("""
+        """),_display_(/*14.10*/select(
+            productForm("category.id"),
+            options(Category.options),
+            '_label -> "Category", '_default -> "-- Choose a category --",
+            '_showConstraints -> false, 'class -> "form-control"
+            )),format.raw/*19.14*/("""
 
-    """),_display_(/*17.6*/inputText(productForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*17.70*/("""
+    """),_display_(/*21.6*/inputText(productForm("stock"), '_label -> "Stock", 'class -> "form-control")),format.raw/*21.83*/("""
+    """),_display_(/*22.6*/inputText(productForm("price"), '_label -> "Price", 'class -> "form-control")),format.raw/*22.83*/("""
 
-    """),format.raw/*19.5*/("""<div class="actions">
+    """),_display_(/*24.6*/inputText(productForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*24.70*/("""
+
+    """),format.raw/*26.5*/("""<div class="actions">
 
         <input type="submit" value="Add/Update Product" class="btn btn-primary">
-        <a href=""""),_display_(/*22.19*/routes/*22.25*/.HomeController.index),format.raw/*22.46*/("""">
+        <a href=""""),_display_(/*29.19*/routes/*29.25*/.HomeController.index(0)),format.raw/*29.49*/("""">
             <button type="button" class="btn btn-warning">Cancel</button>
         </a>
 
     </div>
-""")))}),format.raw/*27.2*/("""
+""")))}),format.raw/*34.2*/("""
 """)))}))
       }
     }
@@ -73,11 +80,11 @@ Seq[Any](format.raw/*1.37*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Dec 09 19:11:11 GMT 2017
+                  DATE: Sun Dec 10 01:36:14 GMT 2017
                   SOURCE: C:/Users/brand/Documents/WebLab/Lab8/CRUD-Labs/app/views/addProduct.scala.html
-                  HASH: cd606538e654d015002f468bd23f87cad06e1b16
-                  MATRIX: 967->1|1075->41|1120->36|1150->58|1178->61|1205->80|1244->82|1272->84|1353->140|1461->239|1501->241|1540->254|1553->258|1584->268|1619->277|1715->352|1748->359|1858->448|1891->455|1989->532|2022->539|2120->616|2155->625|2240->689|2275->697|2427->822|2442->828|2484->849|2622->957
-                  LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|42->10|42->10|42->10|44->12|44->12|45->13|45->13|46->14|46->14|47->15|47->15|49->17|49->17|51->19|54->22|54->22|54->22|59->27
+                  HASH: ce61d870a41792111adc7cc1d942c6a19a562e61
+                  MATRIX: 967->1|1075->41|1120->36|1150->58|1178->61|1205->80|1244->82|1272->84|1353->140|1461->239|1501->241|1540->254|1553->258|1584->268|1619->277|1715->352|1748->359|1858->448|1896->459|2162->704|2197->713|2295->790|2328->797|2426->874|2461->883|2546->947|2581->955|2733->1080|2748->1086|2793->1110|2931->1218
+                  LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|42->10|42->10|42->10|44->12|44->12|45->13|45->13|46->14|51->19|53->21|53->21|54->22|54->22|56->24|56->24|58->26|61->29|61->29|61->29|66->34
                   -- GENERATED --
               */
           

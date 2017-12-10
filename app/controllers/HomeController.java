@@ -25,9 +25,15 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
-    public Result index() {
-        List<Product> productList = Product.findAll();
-        return ok(index.render(productList));
+    public Result index(Long cat) {
+        List<Product> productList = null;
+        List<Category> categoryList = Category.findAll();
+        if (cat == 0){
+            productList = Product.findAll();
+        } else {
+            productList = Category.find.ref(cat).getProducts();
+        }
+        return ok(index.render(productList, categoryList));
     }
     public Result customer() {
         List<Customer> customerList = Customer.findAll();
@@ -64,7 +70,7 @@ public class HomeController extends Controller {
                 newProduct.update();
             }
             flash("success", "Product "+ newProduct.getName() + " was added");
-            return redirect(controllers.routes.HomeController.index());
+            return redirect(controllers.routes.HomeController.index(0));
         }
     }
 
@@ -89,7 +95,7 @@ public class HomeController extends Controller {
             public Result deleteProduct(Long id){
                 Product.find.ref(id).delete();
                 flash("success", "Product has been deleted");
-                return redirect(routes.HomeController.index());
+                return redirect(routes.HomeController.index(0));
             }
 
             public Result deleteCustomer(Long id){

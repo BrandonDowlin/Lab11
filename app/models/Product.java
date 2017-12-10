@@ -21,6 +21,12 @@ private int stock;
 @Constraints.Required
 private double price;
 
+@ManyToOne
+private Category category;
+
+
+
+
 // Default Constructor
 
 public Product() {
@@ -92,7 +98,7 @@ this.name = name;
 
         public double getPrice() {
             
-            return id;
+            return price;
             
             }
             
@@ -112,6 +118,13 @@ this.name = name;
                 
                 this.description = description;
                 
+                }
+
+                public Category getCategory(){
+                    return category;
+                }
+                public void setCategory(Category category){
+                    this.category = category;
                 }
 
 } 
