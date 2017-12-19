@@ -1,5 +1,5 @@
-@(customers: List[models.Customer])
-@main("Customer Page") {
+@(customers: List[models.Customer], user: models.users.User)
+@main("Customer Page", user) {
   
   <p class="lead">Customer Info</p>
   
@@ -47,6 +47,7 @@
   <td>@p.getNumber</td>
   
   <td>@p.getDob</td>
+  @if(user != null){
   <td>
     <a href="@routes.HomeController.updateCustomer(p.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
       <span class="glyphicon glyphicon-pencil"></span>
@@ -57,6 +58,7 @@
       <span class="glyphicon glyphicon-trash"></span>
     </a>
   </td>
+}
   </tr>
 }
   

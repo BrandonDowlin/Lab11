@@ -1,4 +1,8 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\brand\Documents\WebLab\Lab8\CRUD-Labs\app\controllers\HomeController.java:32:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   method findall()[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class models.Product[0m
-[0m[[0m[31merror[0m] [0m[0m            productList = Product.findall();[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/brandon/Web/Lab10/app/views/userLogin.scala.html:10:28: method globalError in class Form is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m                @loginForm.globalError.message[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/brandon/Web/Lab10/app/views/userLogin.scala.html:10:28: method globalError in class Form is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m                @loginForm.globalError.message[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

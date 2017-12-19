@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/brand/Documents/WebLab/Lab8/CRUD-Labs/conf/routes
-// @DATE:Sun Dec 10 01:25:13 GMT 2017
+// @SOURCE:/home/brandon/Web/Lab10/conf/routes
+// @DATE:Tue Dec 19 02:15:52 GMT 2017
 
 
 package router {

@@ -1,5 +1,5 @@
-@(products: List[models.Product], categories: List[models.Category])
-@main("Products Page") {
+@(products: List[models.Product], categories: List[models.Category], user: models.users.User)
+@main("Products Page", user) {
   
   <p class="lead">Product Catalogue</p>
   <div class="row">
@@ -67,6 +67,7 @@
 
   <td class="numeric">&euro; @("%.2f".format(p.getPrice))</td>
 
+  @if(user != null){
   <td>
     <a href="@routes.HomeController.updateProduct(p.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
       <span class="glyphicon glyphicon-pencil"></span>
@@ -78,7 +79,7 @@
       <span class="glyphicon glyphicon-trash"></span>
     </a>
   </td>
-  
+}
   </tr>
 }
   

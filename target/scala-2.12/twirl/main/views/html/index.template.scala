@@ -22,16 +22,16 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[models.Product],List[models.Category],play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[List[models.Product],List[models.Category],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(products: List[models.Product], categories: List[models.Category]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(products: List[models.Product], categories: List[models.Category], user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.69*/("""
-"""),_display_(/*2.2*/main("Products Page")/*2.23*/ {_display_(Seq[Any](format.raw/*2.25*/("""
+Seq[Any](format.raw/*1.94*/("""
+"""),_display_(/*2.2*/main("Products Page", user)/*2.29*/ {_display_(Seq[Any](format.raw/*2.31*/("""
   
   """),format.raw/*4.3*/("""<p class="lead">Product Catalogue</p>
   <div class="row">
@@ -99,27 +99,28 @@ Seq[Any](format.raw/*1.69*/("""
 
   <td class="numeric">&euro; """),_display_(/*68.31*/("%.2f".format(p.getPrice))),format.raw/*68.58*/("""</td>
 
-  <td>
-    <a href=""""),_display_(/*71.15*/routes/*71.21*/.HomeController.updateProduct(p.getId)),format.raw/*71.59*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
+  """),_display_(/*70.4*/if(user != null)/*70.20*/{_display_(Seq[Any](format.raw/*70.21*/("""
+  """),format.raw/*71.3*/("""<td>
+    <a href=""""),_display_(/*72.15*/routes/*72.21*/.HomeController.updateProduct(p.getId)),format.raw/*72.59*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
       <span class="glyphicon glyphicon-pencil"></span>
     </a>
   </td>
 
   <td>
-    <a href=""""),_display_(/*77.15*/routes/*77.21*/.HomeController.deleteProduct(p.getId)),format.raw/*77.59*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
+    <a href=""""),_display_(/*78.15*/routes/*78.21*/.HomeController.deleteProduct(p.getId)),format.raw/*78.59*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
       <span class="glyphicon glyphicon-trash"></span>
     </a>
   </td>
+""")))}),format.raw/*82.2*/("""
+  """),format.raw/*83.3*/("""</tr>
+""")))}),format.raw/*84.2*/("""
   
-  </tr>
-""")))}),format.raw/*83.2*/("""
-  
-  """),format.raw/*85.3*/("""</tbody>
+  """),format.raw/*86.3*/("""</tbody>
   
   </table>
 
   <p>
-    <a href=""""),_display_(/*90.15*/routes/*90.21*/.HomeController.addProduct()),format.raw/*90.49*/("""">
+    <a href=""""),_display_(/*91.15*/routes/*91.21*/.HomeController.addProduct()),format.raw/*91.49*/("""">
         <button class="btn btn-primary">Add a product</button>
     </a>
 
@@ -127,14 +128,14 @@ Seq[Any](format.raw/*1.69*/("""
 </div>
 </div>
   
-  """)))}),format.raw/*98.4*/(""" """))
+  """)))}),format.raw/*99.4*/(""" """))
       }
     }
   }
 
-  def render(products:List[models.Product],categories:List[models.Category]): play.twirl.api.HtmlFormat.Appendable = apply(products,categories)
+  def render(products:List[models.Product],categories:List[models.Category],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(products,categories,user)
 
-  def f:((List[models.Product],List[models.Category]) => play.twirl.api.HtmlFormat.Appendable) = (products,categories) => apply(products,categories)
+  def f:((List[models.Product],List[models.Category],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (products,categories,user) => apply(products,categories,user)
 
   def ref: this.type = this
 
@@ -143,11 +144,11 @@ Seq[Any](format.raw/*1.69*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Dec 10 01:24:55 GMT 2017
-                  SOURCE: C:/Users/brand/Documents/WebLab/Lab8/CRUD-Labs/app/views/index.scala.html
-                  HASH: 153c97158f2cdb73cdf1054ddd6f6c166046d911
-                  MATRIX: 984->1|1146->68|1174->71|1203->92|1242->94|1276->102|1467->267|1481->273|1525->297|1607->352|1643->372|1682->373|1722->385|1759->395|1774->401|1825->431|1879->458|1889->459|1918->467|1960->481|2008->502|2018->503|2058->522|2123->556|2160->566|2244->624|2285->656|2324->657|2359->665|2430->709|2444->714|2480->729|2515->737|2556->748|2593->758|2955->1094|2987->1110|3027->1112|3058->1116|3101->1133|3110->1134|3137->1140|3181->1158|3190->1159|3219->1167|3261->1183|3270->1184|3311->1204|3355->1222|3364->1223|3400->1238|3444->1256|3453->1257|3483->1266|3549->1305|3597->1332|3655->1363|3670->1369|3729->1407|3919->1570|3934->1576|3993->1614|4175->1766|4210->1774|4286->1823|4301->1829|4350->1857|4491->1968
-                  LINES: 28->1|33->1|34->2|34->2|34->2|36->4|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|43->11|43->11|43->11|43->11|44->12|44->12|44->12|44->12|46->14|48->16|53->21|53->21|53->21|54->22|55->23|55->23|55->23|56->24|57->25|60->28|87->55|87->55|87->55|88->56|90->58|90->58|90->58|92->60|92->60|92->60|94->62|94->62|94->62|96->64|96->64|96->64|98->66|98->66|98->66|100->68|100->68|103->71|103->71|103->71|109->77|109->77|109->77|115->83|117->85|122->90|122->90|122->90|130->98
+                  DATE: Tue Dec 19 02:17:56 GMT 2017
+                  SOURCE: /home/brandon/Web/Lab10/app/views/index.scala.html
+                  HASH: 988c2cc89bd823f36b170e9098149501c6d59d0d
+                  MATRIX: 1002->1|1189->93|1216->95|1251->122|1290->124|1322->130|1508->290|1522->296|1566->320|1647->374|1683->394|1722->395|1761->406|1798->416|1813->422|1864->452|1918->479|1928->480|1957->488|1998->501|2046->522|2056->523|2096->542|2159->574|2194->582|2273->635|2314->667|2353->668|2387->675|2457->718|2471->723|2507->738|2541->745|2581->755|2615->762|2950->1071|2982->1087|3022->1089|3052->1092|3093->1107|3102->1108|3129->1114|3171->1130|3180->1131|3209->1139|3249->1153|3258->1154|3299->1174|3341->1190|3350->1191|3386->1206|3428->1222|3437->1223|3467->1232|3531->1269|3579->1296|3615->1306|3640->1322|3679->1323|3709->1326|3755->1345|3770->1351|3829->1389|4013->1546|4028->1552|4087->1590|4252->1725|4282->1728|4319->1735|4352->1741|4423->1785|4438->1791|4487->1819|4620->1922
+                  LINES: 28->1|33->1|34->2|34->2|34->2|36->4|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|43->11|43->11|43->11|43->11|44->12|44->12|44->12|44->12|46->14|48->16|53->21|53->21|53->21|54->22|55->23|55->23|55->23|56->24|57->25|60->28|87->55|87->55|87->55|88->56|90->58|90->58|90->58|92->60|92->60|92->60|94->62|94->62|94->62|96->64|96->64|96->64|98->66|98->66|98->66|100->68|100->68|102->70|102->70|102->70|103->71|104->72|104->72|104->72|110->78|110->78|110->78|114->82|115->83|116->84|118->86|123->91|123->91|123->91|131->99
                   -- GENERATED --
               */
           

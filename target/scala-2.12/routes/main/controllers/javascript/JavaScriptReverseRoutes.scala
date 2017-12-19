@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/brand/Documents/WebLab/Lab8/CRUD-Labs/conf/routes
-// @DATE:Sun Dec 10 01:25:13 GMT 2017
+// @SOURCE:/home/brandon/Web/Lab10/conf/routes
+// @DATE:Tue Dec 19 02:15:52 GMT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -122,7 +122,47 @@ package controllers.javascript {
   
   }
 
-  // @LINE:18
+  // @LINE:16
+  class ReverseLoginController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def loginSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.LoginController.loginSubmit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "loginSubmit"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.LoginController.logout",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
+        }
+      """
+    )
+  
+    // @LINE:16
+    def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.LoginController.login",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:21
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -130,7 +170,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
+    // @LINE:21
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
